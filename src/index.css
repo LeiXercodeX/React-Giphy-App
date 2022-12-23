@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.text-shadow {
+    -webkit-text-stroke: 2px white;
+}
+
+.movement {
+ animation-name: movement;
+ animation-timing-function: ease-out;
+ animation-iteration-count: infinite;
+ animation-duration: 1.5s;
+ animation-direction: alternate;
+ transform-origin: center;
+}
+
+@keyframes movement {
+    to {
+        transform: translateY(10px);
+    }
+    from {
+        transform: translateY(-5px);
+    }
+}
