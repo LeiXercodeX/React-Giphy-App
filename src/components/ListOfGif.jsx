@@ -5,7 +5,7 @@ export default function ListOfGif ({gifs, loading}) {
     return (
         <>
             {loading 
-                ? <div className="flex justify-center w-4/5">
+                ? <div className="flex justify-center min-h-screen w-4/5">
                     <Spinner />
                 </div>
                 : <div className="flex flex-wrap justify-start flex-[3]">

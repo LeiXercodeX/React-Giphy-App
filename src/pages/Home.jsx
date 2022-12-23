@@ -17,7 +17,7 @@ export default function Home () {
 
         { recoverKeyword ?
         <main>
-            <h2 className="font-bold text-4xl ml-6 mb-4 text-gray-300">Ultima Busqueda {decodeURI(recoverKeyword)}</h2>
+            <h2 className="font-bold text-4xl ml-6 mb-4x text-gray-300">Ultima Busqueda: {decodeURI(recoverKeyword)}</h2>
             <div className="md:flex justify-between p-4 h-full content-baseline">
                 <ListOfGif loading={loading} gifs={gifs} />
                 <TrendingSearches />
