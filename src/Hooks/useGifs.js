@@ -2,15 +2,20 @@ import { useState, useEffect, useContext } from "react";
 import getGifs from "../services/getGifs";
 import Context from "../context/StaticContext";
 
+
+const INITIAL_PAGE = 0
+
 export function useGifs (keyword) {
     const {gifs, setGifs} = useContext(Context);
     const [loading, setLoading] = useState(true);
+    const [page, setPage] = useState(INITIAL_PAGE)
+    
+    // Recuperamos keyword del localStorage
+    const keywordToUse = keyword || localStorage.getItem('LastKeyword') || false;
 
     useEffect(()=>{
         setLoading(true)
 
-        // Recuperamos keyword del localStorage
-        const keywordToUse = keyword || localStorage.getItem('LastKeyword') || false;
 
         keywordToUse ? 
             getGifs(keyword = keywordToUse)
@@ -24,5 +29,15 @@ export function useGifs (keyword) {
     }, [keyword])
 
 
-    return {gifs, loading}
+    useEffect(()=>{
+        if (page === INITIAL_PAGE) return
+
+        getGifs(keyword = keywordToUse, page)
+         .then(nextGifs => {
+            setGifs(prev => prev.concat(nextGifs))
+         })
+    }, [page])
+
+
+    return {gifs, loading, setPage}
 }

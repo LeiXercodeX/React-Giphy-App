@@ -25,7 +25,7 @@ export default function Search() {
                             src={logo} alt="logo"/>
                     </div>
                     </Link>
-                    <h1 className='text-7xl text-center text-shadow font-concert'>GiphyApp</h1>
+                    <h1 className='text-7xl text-center text-newborder font-concert'>GiphyApp</h1>
                 </div>
                 <form onSubmit={handleSubmit}
                     className='h-10 w-1/3 border-b-4 border-gray-300 flex justify-center backdrop-blur-3xl rounded-t-md bg-gradient-to-bl from-gray-500'>

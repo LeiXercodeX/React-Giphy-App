@@ -1,7 +1,7 @@
 import ListOfGif from "../components/ListOfGif";
 import Search from "../components/Search";
-import TrendingSearches from "../components/TrendingSearches";
 import { useGifs } from "../Hooks/useGifs";
+import LazyTrending from "../components/LazyTrending";
 
 export default function Home () {
     const {loading, gifs} = useGifs()
@@ -20,7 +20,7 @@ export default function Home () {
             <h2 className="font-bold text-4xl ml-6 mb-4x text-gray-300">Ultima Busqueda: {decodeURI(recoverKeyword)}</h2>
             <div className="md:flex justify-between p-4 h-full content-baseline">
                 <ListOfGif loading={loading} gifs={gifs} />
-                <TrendingSearches />
+                <LazyTrending />
             </div>
         </main> : false
         }
