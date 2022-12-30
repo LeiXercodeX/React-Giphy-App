@@ -4,9 +4,10 @@ import { useGifs } from "../Hooks/useGifs";
 import LazyTrending from "../components/LazyTrending";
 
 export default function Home () {
-    const {loading, gifs} = useGifs()
+    const {loading, gifs} = useGifs();
 
     const recoverKeyword = localStorage.getItem("LastKeyword") || false;
+    console.log(recoverKeyword)
 
 
     return (

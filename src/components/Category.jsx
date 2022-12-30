@@ -7,9 +7,9 @@ export default function Category ({title, items}) {
             <div className="md:flex flex-col">
             <h2 className="text-4xl mb-5">{title}</h2>
             {items ?
-                items.map(item => (
+                items.map((item,idx) => (
                     <Link to={`/search/${item}`}>
-                        <span key={item} 
+                        <span key={`${idx}${item}`}
                             className="text-xl mb-1 mr-3 pl-4 md:mr-0 cursor-pointer transition hover:text-emerald-400">
                                 {item}
                         </span>
